@@ -47,7 +47,7 @@
 
             <ul class="Navigation__list Navigation__list--right">
                 <li>
-                    <a href="https://github.com/koenvu/gw2nodes" title="View on GitHub">
+                    <a href="https://github.com/koenvu/gw2nodes.com" title="View on GitHub" target="_new">
                         <i class="fa fa-github"></i> {{ $revision }}
                     </a>
                 </li>
