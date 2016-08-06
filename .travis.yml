@@ -1,0 +1,10 @@
+language: php
+
+php:
+  - '7.0'
+  - nightly
+
+instal:
+   - composer install --no-interaction --prefer-dist
+
+script: vendor/bin/phpunit
