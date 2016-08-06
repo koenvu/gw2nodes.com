@@ -1,0 +1,112 @@
+nav {
+    z-index: 100;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: $footer-height;
+    padding: 0.5em 1.0em;
+    background-color: $footer-color;
+
+    color: #eee;
+}
+
+.Navigation {
+	background-color: $navigation-color;
+	color: $navigation-text-color;
+    height: $navigation-height;
+    left: 0px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    transition: color 0.3s ease;
+    white-space: nowrap;
+
+    a {
+        color: $navigation-text-color;
+        text-decoration: none;
+        transition: color 0.3s ease;
+
+		&:hover {
+			text-decoration: none;
+			color: $navigation-text-hover-color;
+		}
+	}
+
+	&__header {
+		float: left;
+		padding: 16px 16px;
+		line-height: 20px;
+		font-size: 18px;
+		font-weight: bold;
+
+		text-align: center;
+
+		a {
+			color: $navigation-text-color;
+		}
+	}
+
+	&__list {
+		padding: 14px 0px;
+		line-height: 20px;
+		font-size: 16px;
+		display: inline;
+		float: left;
+
+		li {
+			list-style: none;
+			display: inline;
+			// font-weight: 300;
+			margin: 8px;
+
+			&.active {
+				color: $navigation-text-hover-color;
+				font-weight: bold;
+			}
+		}
+
+		&--right {
+			float: right;
+			margin-right: 20px;
+		}
+	}
+
+	&__toggle {
+        border: 1px solid transparentize($navigation-text-color, 0.7);
+        border-radius: 4px;
+        cursor: pointer;
+        float: left;
+		margin: 8px 16px;
+        padding: 6px 10px;
+        position: relative;
+
+		&:hover {
+			background-color: #e5e5e5;
+		}
+
+		&.in {
+			background-color: #fff;
+		}
+
+		&--right {
+			float: right;
+		}
+	}
+
+	&__icon-bar {
+		background-color: #ccc;
+
+		display: block;
+		width: 22px;
+		height: 2px;
+		border-radius: 2px;
+
+		& + & {
+			margin-top: 4px;
+		}
+	}
+}

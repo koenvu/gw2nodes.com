@@ -1,0 +1,28 @@
+.Legend {
+    background-color: transparentize($navigation-color, 0.2);
+    border-radius: 12px 0 0 0;
+    bottom: $footer-height;
+    color: #333;
+    padding: 16px 16px 16px 16px;
+    position: absolute;
+    right: 0px;
+
+    div > span {
+        margin-right: 10px;
+        width: 20px;
+        height: 1em;
+        display: inline-block;
+
+        &.normal {
+            background-color: $color-normal-node;
+        }
+
+        &.rich {
+            background-color: $color-rich-node;
+        }
+
+        &.permanent {
+            background-color: $color-permanent-node;
+        }
+    }
+}
