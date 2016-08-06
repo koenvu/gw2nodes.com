@@ -1,5 +1,7 @@
 # GW2Nodes
 
+[![Build Status](https://travis-ci.org/koenvu/gw2nodes.com.svg?branch=master)](https://travis-ci.org/koenvu/gw2nodes.com)
+
 This repository contains the code for https://gw2nodes.com
 
 ## Installation
