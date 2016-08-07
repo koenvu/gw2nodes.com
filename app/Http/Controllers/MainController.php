@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Map;
 use App\ItemOfInterest;
-use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Cache;
 
 class MainController extends Controller

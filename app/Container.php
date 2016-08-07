@@ -21,7 +21,7 @@ class Container extends Model
 
     public function getThumbnailAttribute()
     {
-        if ($this->attributes['image_url'] != "") {
+        if ($this->attributes['image_url'] != '') {
             return $this->attributes['image_url'];
         } elseif ($this->items->count() > 0) {
             return $this->items->sortByDesc('price')->first()->image_url;
