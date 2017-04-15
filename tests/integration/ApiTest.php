@@ -79,35 +79,15 @@ class ApiTest extends TestCase
 
         $this->get('api/nodes/0.0.0.0')
              ->assertResponseStatus(200)
-             ->dontSeeJson(['name' => $otherNode->container->name])
-             ->seeJson(['name' => $permanentNode->container->name])
-             ->seeJson(['name' => $nodes->first()->container->name])
              ->seeJsonStructure([
                 '*' => [
                     'id',
-                    'server',
                     'x',
                     'y',
                     'is_rich',
                     'container_id',
-                    'map_id',
-                    'build_id',
                     'is_permanent',
                     'notes',
-                    'container' => [
-                        'id',
-                        'name',
-                        'thumbnail',
-                        'earnings',
-                        'items' => [
-                            '*' => [
-                                'name',
-                                'api_id',
-                                'image_url',
-                                'price'
-                            ],
-                        ],
-                    ],
                 ],
              ]);
     }
@@ -134,7 +114,6 @@ class ApiTest extends TestCase
             'rich' => false,
             'notes' => 'Hard to find',
         ])->assertResponseStatus(200)
-          ->seeJson(['name' => $container->name])
           ->seeJson(['status' => 'OK'])
           ->seeInDatabase('nodes', [
             'server' => '1.2.3.4',
