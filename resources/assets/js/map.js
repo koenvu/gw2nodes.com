@@ -124,9 +124,11 @@ function mapData(data) {
         // Are there user notes attached to this node?
         var hasNotes = node.notes.length > 0;
 
+        var container = containers[node.container_id] || {};
+
         // Create a node icon
         icon = L.icon({
-            iconUrl: node.container.thumbnail,
+            iconUrl: container.thumbnail,
             iconSize: [32, 32],
             iconAnchor: [16, 16],
             className: (node.is_permanent == 1 ? 'permanent-node' : (node.is_rich == 1 ? 'rich-node' : 'normal-node')) + (hasNotes ? ' node-with-notes' : '')
@@ -146,7 +148,7 @@ function mapData(data) {
         }
 
         // Add the name and earnings as a label
-        marker.bindLabel(node.container.name + " (" + currency(node.container.earnings) + ")");
+        marker.bindLabel(container.name+" ("+currency(container.earnings)+")");
 
         // Add a click event
         marker.on('click', function (e) {
@@ -184,7 +186,7 @@ function mapData(data) {
         });
 
         // Add the node to the appropriate layer
-        var cid = node.container.id;
+        var cid = node.container_id;
 
         // No node layer defined yet for this node type?
         if (nodeLayers[cid] == undefined) {

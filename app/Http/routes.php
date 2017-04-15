@@ -9,6 +9,7 @@ Route::group(['prefix' => 'api', 'middleware' => 'api'], function () {
     Route::get('landmarks', 'ApiController@landmarks');
     Route::get('waypoints', 'ApiController@waypoints');
     Route::get('containers', 'ApiController@containers');
+    Route::get('thumbs', 'ApiController@thumbs');
     Route::get('nodes/{server}', 'ApiController@nodes');
     Route::post('demote-node', 'ApiController@demoteNode');
     Route::get('node-info/{id}', 'ApiController@nodeInfo');

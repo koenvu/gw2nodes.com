@@ -95,7 +95,11 @@ class ApiController extends Controller
                 return Node::where(function ($query) use ($server) {
                     $query->where('server', '=', $server)
                           ->orWhere('is_permanent', '=', 1);
-                })->with(['container.items.containers'])->limit(450)->get();
+                })->with(['container.items.containers'])->limit(750)->get()->map(function ($item) {
+                    $item->addHidden('container', 'build_id', 'server', 'map_id');
+
+                    return $item;
+                });
             }
         );
 

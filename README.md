@@ -1,7 +1,6 @@
 # GW2Nodes
 
 [![Build Status](https://img.shields.io/travis/koenvu/gw2nodes.com/master.svg?style=flat-square)](https://travis-ci.org/koenvu/gw2nodes.com)
-[![StyleCI](https://styleci.io/repos/65099193/shield)](https://styleci.io/repos/65099193)
 
 This repository contains the code for https://gw2nodes.com
 

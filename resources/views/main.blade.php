@@ -52,7 +52,7 @@
                     </a>
                 </li>
                 <li class="hidden-xs">IGN: koenvu.7584</li>
-                <li class="hidden-sm"><a href="https://twitter.com/koenvu">@koenvu</a></li>
+                <li class="hidden-sm"><a href="https://koenvu.co/twg2n">@koenvanurk</a></li>
             </ul>
         </nav>
 
@@ -79,7 +79,7 @@
         <div class="Notifications">
         </div>
 
-        <div id="hostedwith" class="hidden-xs">Hosted with <a href="https://www.digitalocean.com/?refcode=fce21793aa0e">DigitalOcean</a></div>
+        <div id="hostedwith" class="hidden-xs">Hosted with <a href="https://koenvu.co/dog2n">DigitalOcean</a></div>
 
         @include('_modals.node-create')
 
@@ -108,6 +108,7 @@
             });
             </script>
         @endif
+        <script>window.containers = {!! $thumbs !!};</script>
         <script src="{{ elixir('js/all.js') }}"></script>
         <script src="{{ elixir('js/app.js') }}"></script>
 

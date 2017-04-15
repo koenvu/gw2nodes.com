@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Map;
+use App\Container;
 use App\ItemOfInterest;
 use Illuminate\Support\Facades\Cache;
 
@@ -24,7 +25,13 @@ class MainController extends Controller
             return substr(`git rev-parse HEAD`, 0, 7);
         });
 
-        return view('main', compact('maps', 'itemsOfInterest', 'revision'));
+        $thumbs = Cache::tags(['container'])->remember('thumbs', 0, function () {
+            return json_encode(
+                Container::where('is_public', '=', 1)->get()->keyBy('id')
+            );
+        });
+
+        return view('main', compact('maps', 'itemsOfInterest', 'revision', 'thumbs'));
     }
 
     public function live()
